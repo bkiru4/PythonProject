@@ -17,7 +17,6 @@ class ParkingLot:
     def spacesTotal(self):
         '''print total # of parking spaces in parking garage'''
         print("This parking garage has a total of {} parking spots\nMotorcycle: {}\nCompact: {}\nRegular: {}\nLarge: {}".format(self.motorcycleSpots+self.compactSpots+self.regularSpots+self.largeSpots,self.motorcycleSpots,self.compactSpots,self.regularSpots,self.largeSpots))
-        pass
     def lotEmpty(self):
         #print if parking lot is empty
         pass
