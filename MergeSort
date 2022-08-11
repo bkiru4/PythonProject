@@ -1,0 +1,50 @@
+def mergeSort(arr, left, right):
+    if left < right:
+        mid = left+(right-left)//2
+ 
+        mergeSort(arr, left, mid)
+        mergeSort(arr, mid+1, right)
+        merge(arr, left, mid, right)
+
+def merge(arr, start, mid, end):
+    leftLen = mid - start + 1
+    rightLen = end - mid
+    L = [0] * (leftLen)
+    R = [0] * (rightLen)
+
+    for i in range(0, leftLen):
+        L[i] = arr[start + i]
+    for j in range(0, rightLen):
+        R[j] = arr[mid + 1 + j]
+ 
+    lidx = ridx = 0
+    k = start
+ 
+    while lidx < leftLen and ridx < rightLen:
+        if L[lidx] <= R[ridx]:
+            arr[k] = L[lidx]
+            lidx += 1
+        else:
+            arr[k] = R[ridx]
+            ridx += 1
+        k += 1
+
+    while lidx < leftLen:
+        arr[k] = L[lidx]
+        lidx += 1
+        k += 1
+    while ridx < rightLen:
+        arr[k] = R[ridx]
+        ridx += 1
+        k += 1
+ 
+
+#Main Code
+arr = [3, 25, 2, 1, 15, 200, 4,2,2,1,525,3]
+
+print("Unsorted array:")
+print(arr)
+ 
+mergeSort(arr, 0, len(arr)-1)
+print("\nSorted array:")
+print(arr)
