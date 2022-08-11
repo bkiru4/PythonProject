@@ -9,8 +9,8 @@ def mergeSort(arr, left, right):
 def merge(arr, start, mid, end):
     leftLen = mid - start + 1
     rightLen = end - mid
-    L = [0] * (leftLen)
-    R = [0] * (rightLen)
+    L = [None] * (leftLen)
+    R = [None] * (rightLen)
 
     for i in range(0, leftLen):
         L[i] = arr[start + i]
